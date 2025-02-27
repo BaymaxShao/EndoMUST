@@ -1,8 +1,6 @@
 # EndoDEER: Monocular <ins>De</ins>pth <ins>E</ins>stimation for <ins>R</ins>obotic <ins>Endo</ins>scopy via End-to-end Self-supervised Training with Multistage Efficient Finetuning
 Here is the pre-released code implementation for "**EndoDEER: Monocular Depth and Ego-motion Estimation for Robotic Endoscopy via End-to-end Self-supervised Training with Multistage Efficient Finetuning**". 
 
-This work revisited the parameter-efficient finetuning for depth estiamtion in robotic endoscopy from the perspective of the training strategy.
-
 :newspaper: **News:**
 - [X] 🚩 Evaluation Code and Weights have been Released.
 - [ ] :dart: The further work on sim-to-real is on-going.
