@@ -1,5 +1,7 @@
 # EndoDEER: Monocular <ins>D</ins>epth and <ins>E</ins>go-motion <ins>E</ins>stimation for <ins>E</ins>obotic <ins>Endo</ins>scopy via End-to-end Self-supervised Training with Multistage Efficient Finetuning
-The pre-released code implementation for "EndoDEER: Monocular Depth and Ego-motion Estimation for Robotic Endoscopy via End-to-end Self-supervised Training with Multistage Efficient Finetuning". This work revisited the parameter-efficient finetuning for depth estiamtion in robotic endoscopy from the perspective of the training strategy.
+Here is the pre-released code implementation for "**EndoDEER: Monocular Depth and Ego-motion Estimation for Robotic Endoscopy via End-to-end Self-supervised Training with Multistage Efficient Finetuning**". 
+
+This work revisited the parameter-efficient finetuning for depth estiamtion in robotic endoscopy from the perspective of the training strategy.
 
 **News:**
 - [X] Evaluation Code and Weights have been Released.
@@ -22,9 +24,11 @@ Our implementation system:
 - NVIDIA Geforce RTX 4090 GPU (At least 24GB GPU memory)
 - Pytorch 2.0.0 + CUDA 11.8
 
-Our environment packages: in [env.yaml](env.yaml)
+Our environment packages: in [env.yaml](env.yaml) <sup>1</sup>
 
 You also need dowloading the [pretrained Depth Anything-B model](https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main/checkpoints) into ./pretrained_model
+
+<sup>1</sup> Some packages are used for implementation of existing works, e.g. `mmengine` for MonoViT used in MonoPCC and DVSMono.
 
 ## Datasets
 [Back to ToC](#table-of-contents)
