@@ -52,7 +52,7 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 
 **DVSMono**: [in **AF_training_split/README.md**](https://github.com/adam99goat/DVSMono/blob/main/AF_training_split/README.md#comparison-with-sotas-using-the-training-split-of-af-sfmlearner)
 
-**IID-SfMLearner**: [in section **Prediction for a single image**](https://github.com/bobo909/IID-SfmLearner?tab=readme-ov-file#%EF%B8%8F-prediction-for-a-single-image) ONLY weights for depth estimation, for ego-motion estimation: [here]()
+**IID-SfMLearner**: [in section **Prediction for a single image**](https://github.com/bobo909/IID-SfmLearner?tab=readme-ov-file#%EF%B8%8F-prediction-for-a-single-image) ONLY weights for depth estimation, for ego-motion estimation: [GoogleDrive](), [BaiduCloud]()
 
 **AF-SfMLearner**: [in section **Model Zoo/End-to-End**](https://github.com/ShuweiShao/AF-SfMLearner?tab=readme-ov-file#-model-zoo)
 
@@ -62,9 +62,9 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 
 _**Sincerely thanks the above remarkable works for their contributions to the community!**_ :kissing_heart:
 
-**Ours**: 
+**Ours**: [GoogleDrive](), [BaiduCloud]()
 
-**Ablations**:
+**Ablations**: [GoogleDrive](), [BaiduCloud]()
 
 ## Results of Depth Estimation
 [Back to ToC](#table-of-contents)
