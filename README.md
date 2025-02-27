@@ -3,12 +3,13 @@ Here is the pre-released code implementation for "**EndoDEER: Monocular Depth an
 
 This work revisited the parameter-efficient finetuning for depth estiamtion in robotic endoscopy from the perspective of the training strategy.
 
-**News:**
-- [X] Evaluation Code and Weights have been Released.
-- [ ] The further work on sim-to-real is on-going.
+:newspaper: **News:**
+- [X] 🚩 Evaluation Code and Weights have been Released.
+- [ ] :dart: The further work on sim-to-real is on-going.
+
 
 ## Table of Contents
-If you want to get back this section for navigation, click the [Back to ToC](#table-of-contents) at the beginning of each section.
+📑 If you want to get back this section for navigation, click the [Back to ToC](#table-of-contents) at the beginning of each section.
 - [Installation](#installation)
 - [Prepare Datasets](#datasets)
 - [Prepare Pretrained Weights](#pretrained-weights)
@@ -19,21 +20,21 @@ If you want to get back this section for navigation, click the [Back to ToC](#ta
 ## Installation
 [Back to ToC](#table-of-contents)
 
-Our implementation system: 
+:computer: Our implementation system: 
 - Ubuntu 22.04
 - NVIDIA Geforce RTX 4090 GPU (At least 24GB GPU memory)
 - Pytorch 2.0.0 + CUDA 11.8
 
 Our environment packages: in [env.yaml](env.yaml)
 
-(Some packages are used for implementation of existing works, e.g. `mmengine` for MonoViT used in MonoPCC and DVSMono.)
+:heavy_exclamation_mark: (Some packages are used for implementation of existing works, e.g. `mmengine` for MonoViT used in MonoPCC and DVSMono.)
 
-You also need dowloading the [pretrained Depth Anything-B model](https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main/checkpoints) into ./pretrained_model
+:file_folder: You also need dowloading the [pretrained Depth Anything-B model](https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main/checkpoints) into ./pretrained_model
 
 ## Datasets
 [Back to ToC](#table-of-contents)
 
-The experiments are implemented on two main-stream **public** endoscopic datasets for self-supervised depth estimation and zero-shot depth estimation.
+The experiments are implemented on two main-stream **public** endoscopic datasets :file_folder: for self-supervised depth estimation and zero-shot depth estimation.
 - **SCARED dataset**: Train/Validation/Evaluation [Website](https://endovissub2019-scared.grand-challenge.org/)
 
 - **Hamlyn dataset**: Zero-shot Evaluation [Website](http://hamlyn.doc.ic.ac.uk/vision/)
@@ -43,7 +44,7 @@ _**Sincerely thanks for their great contributions to the community!!!**_
 ## Pretrained Weights
 [Back to ToC](#table-of-contents)
 
-The existing models pretrained on SCARED dataset can be downloaded from the following links:
+The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded from the following links:
 
 **EndoDAC**: [in section **Results**](https://github.com/BeileiCui/EndoDAC?tab=readme-ov-file#results)
 
@@ -59,7 +60,7 @@ The existing models pretrained on SCARED dataset can be downloaded from the foll
 
 **Depth Anything v2 (Finetuned)**: 
 
-_**Sincerely thanks the above remarkable works for their contributions to the community!**_
+_**Sincerely thanks the above remarkable works for their contributions to the community!**_ :kissing_heart:
 
 **Ours**: 
 
@@ -68,10 +69,12 @@ _**Sincerely thanks the above remarkable works for their contributions to the co
 ## Results of Depth Estimation
 [Back to ToC](#table-of-contents)
 
+:pushpin: Note that:
 1. CI: `Pred.` denotes that **Camera Intrinsics** are **Predicted**.
 2. *: Results form the **public provided weights**.
 3. \^: Model **finetuned** on SCARED dataset.
-### SCARED dataset
+4. **Inference speed** will be varied with hardware, e.g. 17.7ms on NVIDIA 3090 but 5.7ms on NVIDIA 4090 for EndoDAC.
+### :clipboard: SCARED dataset
 |Methods|From|CI|Abs Rel|Sq Rel|RMSE|RMSE Log|$\delta$|
 |:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 |AF-SfMLearner|**MedIA'22**|Given|0.059|0.435|4.925|0.082|0.974|
@@ -84,7 +87,7 @@ _**Sincerely thanks the above remarkable works for their contributions to the co
 |EndoDAC|**MICCAI'24**|Pred.|0.052|0.362|4.464|0.072|0.979|
 |**EndoDEER**|**Ours**|**Pred.**|**0.047**|**0.315**|**4.246**|**0.067**|**0.984**|
 
-### Hamlyn dataset (Zero-shot)
+### :clipboard: Hamlyn dataset (Zero-shot)
 |Methods|From|CI|Abs Rel|Sq Rel|RMSE|RMSE Log|$\delta$|
 |:---|:---|:---:|:---:|:---:|:---:|:---:|:---:|
 |AF-SfMLearner|**MedIA'22**|Given|0.168|4.440|13.870|0.204|0.770|
@@ -96,22 +99,25 @@ _**Sincerely thanks the above remarkable works for their contributions to the co
 |EndoDAC|**MICCAI'24**|Pred.|0.156|3.854|12.936|0.193|0.791|
 |**EndoDEER**|**Ours**|**Pred.**|**0.140**|**3.087**|**11.700**|**0.174**|**0.813**|
 
+### :eyes: Qualitative Results of Depth Estimation
+![](assets/vis_depth.png)
+
 ## Results of Ego-motion estimation and Camera Intrinsics Prediction
-[Back to ToC](#table-of-content)
-### Quantitative Results of Ego-motion Estimation
+[Back to ToC](#table-of-contents)
+### :clipboard: Quantitative Results of Ego-motion Estimation
 The results are calculated by Absolute Translation Error(ATE). **The best results** are in bold, while <ins>the second best results</ins> are underlined.
 |Methods|From|CI|Seq. 1|Seq. 2|Seq. 3|
 |:---|:---|:---:|:---:|:---:|:---:|
-|AF-SfMLearner|**MedIA'22**|Given|<ins>0.0941</ins>|0.0742||
-|IID-SfMLearner|**JBHI'24**|Given|0.1040|0.0781||
-|MonoPCC|**arXiv'24**|Given|0.1040|0.0781||
-|EndoDAC|**MICCAI'24**|Pred.|0.0936|0.0776||
-|**EndoDEER**|**Ours**|**Pred.**|**0.0927**|<ins>0.0754</ins>|**0.0678**|
+|AF-SfMLearner|**MedIA'22**|Given|<ins>0.0941</ins>|0.0742|0.0596|
+|IID-SfMLearner|**JBHI'24**|Given|0.1040|0.0781|0.0614|
+|MonoPCC|**arXiv'24**|Given|0.0951|0.0764|0.0666|
+|EndoDAC|**MICCAI'24**|Pred.|0.0936|0.0776|0.0588|
+|**EndoDEER**|**Ours**|**Pred.**|**0.0927**|<ins>0.0754</ins>|**0.0586**|
 
-### Qualitative Results of Ego-motion Estimation
+### :eyes: Qualitative Results of Ego-motion Estimation
 ![](assets/vis_traj.png)
 
-### Quantitative Results of Camera Intrinsics Estimation
+### :clipboard: Quantitative Results of Camera Intrinsics Estimation
 The results are displayed as `value(relative error)`
 |Methods|fx|fy|cx|cy|
 |:---|:---:|:---:|:---:|:---:|
@@ -122,7 +128,7 @@ The results are displayed as `value(relative error)`
 ## Acknowledgements
 [Back to ToC](#table-of-contents)
 
-_Sincerely thanks the following related works for their remarkable contribution to the community and their inspiration to this work!_
+_Sincerely thanks the following related works for their remarkable contribution to the community and their inspiration to this work!_ :kissing_heart:
 - [MonoPCC](https://github.com/adam99goat/MonoPCC): Novel idea of cycle transformation constraints for training
 - [DVSMono](https://github.com/adam99goat/DVSMono): Excellent idea of pose alignment-friendly dynamic view selection for training
 - [EndoDAC](https://github.com/BeileiCui/EndoDAC): Innovative idea of parameter-efficient finetuning for endoscopic scenes
