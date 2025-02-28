@@ -56,9 +56,9 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 
 **AF-SfMLearner**: [in section **Model Zoo/End-to-End**](https://github.com/ShuweiShao/AF-SfMLearner?tab=readme-ov-file#-model-zoo)
 
-**Depth Anything (Finetuned)**: 
+**Depth Anything (Finetuned)**: [GoogleDrive](), [BaiduCloud]()
 
-**Depth Anything v2 (Finetuned)**: 
+**Depth Anything v2 (Finetuned)**: [GoogleDrive](), [BaiduCloud]()
 
 _**Sincerely thanks the above remarkable works for their contributions to the community!**_ :kissing_heart:
 
