@@ -114,7 +114,8 @@ The **arguments settings** are similar to the settings for depth estimation, wit
 ## Acknowledgements
 [Back to ToC](#table-of-contents)
 
-_Sincerely thanks the following related works for their remarkable contribution to the community and their inspiration to this work!_ :kissing_heart:
+_Sincerely thank the following related works for their remarkable contribution to the community, as well as their inspiration and code support to this work!_ :kissing_heart:
+
 - [MonoPCC](https://github.com/adam99goat/MonoPCC): Novel idea of cycle transformation constraints for training
 - [DVSMono](https://github.com/adam99goat/DVSMono): Excellent idea of pose alignment-friendly dynamic view selection for training
 - [EndoDAC](https://github.com/BeileiCui/EndoDAC): Innovative idea of parameter-efficient finetuning for endoscopic scenes
