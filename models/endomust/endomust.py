@@ -185,10 +185,9 @@ class endomust(nn.Module):
                     blk.mlp.fc1 = DVLinear(mlp_in_features, mlp_hidden_features, r=self.r, lora_alpha=self.r)
                     blk.mlp.fc2 = DVLinear(mlp_hidden_features, mlp_out_features, r=self.r, lora_alpha=self.r)
                     blk.attn.qkv = DVLinear(qkv_in_features, qkv_out_features, r=self.r, lora_alpha=self.r)
-                elif peft_type == "lora":
-                    blk.mlp.fc1 = LoraLinear(mlp_in_features, mlp_hidden_features, r=self.r)
-                    blk.mlp.fc2 = LoraLinear(mlp_hidden_features, mlp_out_features, r=self.r)
-                    blk.attn.qkv = LoraLinear(qkv_in_features, qkv_out_features, r=self.r, lora_alpha=self.r)
+                elif peft_type == "part-dvlora":
+                    blk.mlp.fc1 = DVLinear(mlp_in_features, mlp_hidden_features, r=self.r, lora_alpha=self.r)
+                    blk.mlp.fc2 = DVLinear(mlp_hidden_features, mlp_out_features, r=self.r, lora_alpha=self.r)
 
         self.encoder = encoder
         self.depth_head = DPTHead(self.embedding_dim, self.depth_head_feature, use_bn,
