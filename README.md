@@ -88,7 +88,7 @@ The **arguments setting** for different models are shown as the following table:
 |Models|`--model_type`|`--lora_type`|`--learn_intrinsics`|
 |:---|:---:|:---:|:---:|
 |Ours/Ablations|`endomust`|`dvlora`|`True`|
-|EndoDAC|`endodac`|`dvlora`|`True`|
+|EndoDAC|`endomust`|`part-dvlora`|`True`|
 |MonoPCC|`pcc`|`none`|`False`|
 |DVSMono|`pcc`|`none`|`False`|
 |IID-SfMLearner|`afsfm`|`none`|`False`|
