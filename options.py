@@ -37,7 +37,7 @@ class MonodepthOptions:
         self.parser.add_argument("--lora_type",
                                  type=str,
                                  help="which lora type use for the model",
-                                 choices=["lora", "dvlora", "moe", "none", "moe2"],
+                                 choices=["dvlora", "part_dvlora"],
                                  default="dvlora")
         self.parser.add_argument("--lora_rank",
                                  type=int,
@@ -60,137 +60,6 @@ class MonodepthOptions:
                                  type=str2bool,
                                  help="learn the camera intrinsics with a seperate decoder",
                                  default=True)
-        # TRAINING options
-        self.parser.add_argument("--model_name",
-                                 type=str,
-                                 help="the name of the folder to save the model in",
-                                 default="endomust")
-        self.parser.add_argument("--split",
-                                 type=str,
-                                 help="which training split to use",
-                                 choices=["endovis", "simcol", "endoslam",
-                                          "endoslam/Colon", "endoslam/Small_Intestine", "endoslam/Stomach"],
-                                 default="endovis")
-        self.parser.add_argument("--num_layers",
-                                 type=int,
-                                 help="number of resnet layers",
-                                 default=18,
-                                 choices=[18, 34, 50, 101, 152])
-        self.parser.add_argument("--dataset",
-                                 type=str,
-                                 help="dataset to train on",
-                                 default="endovis",
-                                 choices=["endovis", "simcol", "endoslam"])
-        self.parser.add_argument("--png",
-                                 help="if set, trains from raw KITTI png files (instead of jpgs)",
-                                 action="store_true")
-        self.parser.add_argument("--height",
-                                 type=int,
-                                 help="input image height",
-                                 default=256)
-        self.parser.add_argument("--width",
-                                 type=int,
-                                 help="input image width",
-                                 default=320)
-        self.parser.add_argument("--disparity_smoothness",
-                                 type=float,
-                                 help="disparity smoothness weight",
-                                 default=1e-3)
-        self.parser.add_argument("--position_smoothness",
-                                 type=float,
-                                 help="registration smoothness weight",
-                                 default=1e-3)
-        self.parser.add_argument("--transform_constraint",
-                                 type=float,
-                                 help="transform constraint weight",
-                                 default=0.01)
-        self.parser.add_argument("--transform_smoothness",
-                                 type=float,
-                                 help="transform smoothness weight",
-                                 default=0.01)
-        self.parser.add_argument("--reconstruction_constraint",
-                                 type=float,
-                                 help="consistency constraint weight",
-                                 default=0.02)
-        self.parser.add_argument("--reflec_constraint",
-                                 type=float,
-                                 help="epipolar constraint weight",
-                                 default=0.02)
-        self.parser.add_argument("--reprojection_constraint",
-                                 type=float,
-                                 help="geometry constraint weight",
-                                 default=0.1)
-        self.parser.add_argument("--scales",
-                                 nargs="+",
-                                 type=int,
-                                 help="scales used in the loss",
-                                 default=[0, 1, 2, 3])
-        self.parser.add_argument("--min_depth",
-                                 type=float,
-                                 help="minimum depth",
-                                 default=0.1)
-        self.parser.add_argument("--max_depth",
-                                 type=float,
-                                 help="maximum depth",
-                                 default=150.0)
-        self.parser.add_argument("--use_stereo",
-                                 help="if set, uses stereo pair for training",
-                                 action="store_true")
-        self.parser.add_argument("--frame_ids",
-                                 nargs="+",
-                                 type=int,
-                                 help="frames to load",
-                                 default=[0, -1, 1])
-
-        # OPTIMIZATION options
-        self.parser.add_argument("--batch_size",
-                                 type=int,
-                                 help="batch size",
-                                 default=8)
-        self.parser.add_argument("--learning_rate",
-                                 type=float,
-                                 help="learning rate",
-                                 default=1e-4)
-        self.parser.add_argument("--num_epochs",
-                                 type=int,
-                                 help="number of epochs",
-                                 default=20)
-        self.parser.add_argument("--scheduler_step_size",
-                                 type=int,
-                                 help="step size of the scheduler",
-                                 default=10)
-
-        # ABLATION options
-        self.parser.add_argument("--v1_multiscale",
-                                 help="if set, uses monodepth v1 multiscale",
-                                 action="store_true")
-        self.parser.add_argument("--avg_reprojection",
-                                 help="if set, uses average reprojection loss",
-                                 action="store_true")
-        self.parser.add_argument("--disable_automasking",
-                                 help="if set, doesn't do auto-masking",
-                                 action="store_true")
-        self.parser.add_argument("--predictive_mask",
-                                 help="if set, uses a predictive masking scheme as in Zhou et al",
-                                 action="store_true")
-        self.parser.add_argument("--no_ssim",
-                                 help="if set, disables ssim in the loss",
-                                 action="store_true")
-        self.parser.add_argument("--weights_init",
-                                 type=str,
-                                 help="pretrained or scratch",
-                                 default="pretrained",
-                                 choices=["pretrained", "scratch"])
-        self.parser.add_argument("--pose_model_input",
-                                 type=str,
-                                 help="how many images the pose network gets",
-                                 default="pairs",
-                                 choices=["pairs", "all"])
-        self.parser.add_argument("--pose_model_type",
-                                 type=str,
-                                 help="normal or shared",
-                                 default="separate_resnet",
-                                 choices=["posecnn", "separate_resnet", "shared"])
 
         # SYSTEM options
         self.parser.add_argument("--no_cuda",
@@ -210,16 +79,6 @@ class MonodepthOptions:
                                  type=str,
                                  help="models to load",
                                  default=["position_encoder", "position"])
-
-        # LOGGING options
-        self.parser.add_argument("--log_frequency",
-                                 type=int,
-                                 help="number of batches between each tensorboard log",
-                                 default=400)
-        self.parser.add_argument("--save_frequency",
-                                 type=int,
-                                 help="number of epochs between each save",
-                                 default=1)
 
         # EVALUATION options
         self.parser.add_argument("--model_type",
@@ -247,8 +106,7 @@ class MonodepthOptions:
                                  type=str,
                                  default="endovis",
                                  choices=[
-                                    "hamlyn", "c3vd", "endovis", "simcol", "endoslam", "servct",
-                                     "endoslam/Colon", "endoslam/Small_Intestine", "endoslam/Stomach"],
+                                    "hamlyn", "endovis"],
                                  help="which split to run eval on")
         self.parser.add_argument("--save_pred_disps",
                                  help="if set saves predicted disparities",
