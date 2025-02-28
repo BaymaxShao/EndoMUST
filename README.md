@@ -14,7 +14,7 @@ We revisit the self-supervised training strategy for endoscopy depth estimation,
 - [Prepare Datasets](#datasets)
 - [Prepare Pretrained Weights](#pretrained-weights)
 - [Results](assets/Results.md)
-- Evaluation of [Depth Estimation](#evaluation-of-depth-estimation) and [Ego-motion + Camera Intrinsics Estimation](#evaluation-of-ego-motion-estimation-and-camera-intrinsics-prediction)
+- Evaluation of [Depth Estimation](#evaluation-of-depth-estimation) and [Ego-motion + Camera Intrinsics Estimation](#evaluation-of-ego-motion-and-camera-intrinsics-estimation)
 - [Acknowledgements](#acknowledgements)
 
 ## Installation
@@ -65,6 +65,51 @@ _**Sincerely thanks the above remarkable works for their contributions to the co
 **Ours**: [GoogleDrive](), [BaiduCloud]()
 
 **Ablations**: [GoogleDrive](), [BaiduCloud]()
+
+## Evaluation of Depth Estimation
+[Back to ToC](#table-of-content)
+
+Firstly, the ground truth of depth maps in SCARED dataset needs to be exported by the following code.
+```
+python export_gt_depth.py --data_path <your data path>
+```
+Then, you can use the following code to evlauate various models on datasets:
+```
+python evaluate_depth.py --data_path <your data path> --eval_mono --eval_split <dataset> --model_type <model used for eval> --load_weights_folder <weight path> \
+--lora_type <method for LoRA> --learn_intrinsics <with/without camera intrinsics> --visualize_depth
+```
+
+`--eval_split`: SCARED dataset---`endovis`  Hamlyn dataset---`hamlyn` 
+
+`--visualize_depth`: if you don't want to visualize the qualitative resullts, delete it when running.
+
+The **arguments setting** for different models are shown as the following table:
+
+|Models|`--model_type`|`--lora_type`|`--learn_intrinsics`|
+|:---|:---:|:---:|:---:|
+|Ours/Ablations|`endomust`|`dvlora`|`True`|
+|EndoDAC|`endodac`|`dvlora`|`True`|
+|MonoPCC|`pcc`|`none`|`False`|
+|DVSMono|`pcc`|`none`|`False`|
+|IID-SfMLearner|`afsfm`|`none`|`False`|
+|AF-SfMLearner|`afsfm`|`none`|`False`|
+|Depth Anything v1/v2|`depthanything`|`none`|`False`|
+
+## Evaluation of Ego-motion and Camera Intrinsics Estimation
+[Back to ToC](#table-of-content)
+
+Firstly, the ground truth of ego-motion sequences needs to be exported by the following code.
+```
+python export_gt_pose.py --data_path <your data path> --sequence <sequence to export>
+```
+Note that `--sequence` needs to be set as `sequence1`, `sequence2`, `sequence3` one by one
+
+Then, you can use the following code to evlauate various models on all three sequences:
+```
+python evaluate_pose.py --data_path <your data path> --eval_mono --eval_split <dataset> --load_weights_folder <weight path> --learn_intrinsics <with/without camera intrinsics>
+```
+The **arguments settings** are similar to the settings for depth estimation, without `--model_type` and `--visualize_depth`. 
+
 
 ## Acknowledgements
 [Back to ToC](#table-of-contents)
