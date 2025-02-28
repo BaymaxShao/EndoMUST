@@ -79,23 +79,10 @@ def evaluate(opt):
             dataset = datasets.SCAREDRAWDataset(opt.data_path, filenames,
                                                 opt.height, opt.width,
                                                 [0], 4, is_train=False)
-        if opt.eval_split == 'simcol':
-            filenames = readlines(os.path.join(splits_dir, opt.eval_split, "test_files.txt"))
-            dataset = datasets.SimColRAWDataset(opt.data_path, filenames,
-                                                opt.height, opt.width,
-                                                [0], 4, is_train=False)
             MAX_DEPTH = 256
         elif opt.eval_split == 'hamlyn':
             dataset = datasets.HamlynDataset(opt.data_path, opt.height, opt.width,
                                              [0], 4, is_train=False)
-        elif opt.eval_split == 'servct':
-            dataset = datasets.SERVCTDataset(opt.data_path, opt.height, opt.width,
-                                             [0], 4, is_train=False)
-            MAX_DEPTH = 200
-        elif opt.eval_split == 'c3vd':
-            dataset = datasets.C3VDDataset(opt.data_path, opt.height, opt.width,
-                                           [0], 4, is_train=False)
-            MAX_DEPTH = 100
 
         dataloader = DataLoader(dataset, 1, shuffle=False, num_workers=opt.num_workers,
                                 pin_memory=True, drop_last=False)
