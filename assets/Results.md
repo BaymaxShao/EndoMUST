@@ -34,7 +34,7 @@
 |**EndoMUST**|**Ours**|**Pred.**|**0.145**|**3.382**|**12.100**|**0.180**|**0.807**|1.8|4.5|
 
 ### :eyes: Qualitative Results of Depth Estimation
-![](assets/vis_depth.png)
+![](vis_depth.png)
 
 ## Results of Ego-motion estimation and Camera Intrinsics Prediction
 [Back to ToC](#table-of-contents)
@@ -49,7 +49,7 @@ The results are calculated by Absolute Translation Error(ATE). **The best result
 |**EndoMUST**|**Ours**|**Pred.**|**0.0933**|<ins>0.0750</ins>|**0.0586**|
 
 ### :eyes: Qualitative Results of Ego-motion Estimation
-![](assets/vis_traj.png)
+![](vis_traj.png)
 
 ### :clipboard: Quantitative Results of Camera Intrinsics Estimation
 The results are displayed as `value(relative error)`
