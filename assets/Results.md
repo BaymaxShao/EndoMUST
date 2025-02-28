@@ -18,7 +18,7 @@
 |DVSMono|**BIBM'24**|Given|0.055|0.410|4.797|0.078|0.975|27.0|12.7|
 |MonoPCC|**arXiv'24**|Given|0.051|0.349|4.488|0.072|0.983|27.0|12.7|
 |EndoDAC|**MICCAI'24**|Pred.|0.052|0.362|4.464|0.072|0.979|1.6|5.7|
-|**EndoDEER**|**Ours**|**Pred.**|**0.046**|**0.313**|4.276|**0.067**|**0.984**|1.8|6.2|
+|**EndoMUST**|**Ours**|**Pred.**|**0.046**|**0.313**|4.276|**0.067**|**0.984**|1.8|6.2|
 
 ### :clipboard: Hamlyn dataset (Zero-shot)
 |Methods|From|CI|Abs Rel|Sq Rel|RMSE|RMSE Log|$\delta$|TP/M|Speed/ms|
@@ -31,7 +31,7 @@
 |DVSMono*|**BIBM'24**|Given|0.152|3.566|12.643|0.187|0.791|27.0|10.5|
 |MonoPCC*|**arXiv'24**|Given|0.158|3.889|13.205|0.194|0.782|27.0|10.5|
 |EndoDAC|**MICCAI'24**|Pred.|0.156|3.854|12.936|0.193|0.791|1.6|4.0|
-|**EndoDEER**|**Ours**|**Pred.**|**0.145**|**3.382**|**12.100**|**0.180**|**0.807**|1.8|4.5|
+|**EndoMUST**|**Ours**|**Pred.**|**0.145**|**3.382**|**12.100**|**0.180**|**0.807**|1.8|4.5|
 
 ### :eyes: Qualitative Results of Depth Estimation
 ![](assets/vis_depth.png)
@@ -46,7 +46,7 @@ The results are calculated by Absolute Translation Error(ATE). **The best result
 |IID-SfMLearner|**JBHI'24**|Given|0.1040|0.0781|0.0614|
 |MonoPCC|**arXiv'24**|Given|0.0951|0.0764|0.0666|
 |EndoDAC|**MICCAI'24**|Pred.|0.0936|0.0776|0.0588|
-|**EndoDEER**|**Ours**|**Pred.**|**0.0933**|<ins>0.0750</ins>|**0.0586**|
+|**EndoMUST**|**Ours**|**Pred.**|**0.0933**|<ins>0.0750</ins>|**0.0586**|
 
 ### :eyes: Qualitative Results of Ego-motion Estimation
 ![](assets/vis_traj.png)
@@ -57,4 +57,4 @@ The results are displayed as `value(relative error)`
 |:---|:---:|:---:|:---:|:---:|
 |GT|0.8200|1.0200|0.5000|0.5000|
 |EndoDAC*|0.8610(5.00%)|1.0778(5.67%)|0.4917(1.66%)|0.5101(2.02%)|
-|**EndoDEER**|0.8158(**0.51%**)|1.0232(**0.31%**)|0.4949(**1.02%**)|0.4951(**0.98%**)|
+|**EndoMUST**|0.8158(**0.51%**)|1.0232(**0.31%**)|0.4949(**1.02%**)|0.4951(**0.98%**)|
