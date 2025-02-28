@@ -108,7 +108,7 @@ Then, you can use the following code to evlauate various models on all three seq
 ```
 python evaluate_pose.py --data_path <your data path> --eval_mono --eval_split <dataset> --load_weights_folder <weight path> --learn_intrinsics <with/without camera intrinsics>
 ```
-The **arguments settings** are similar to the settings for depth estimation, without `--model_type` and `--visualize_depth`. 
+The **arguments settings** are similar to the settings for depth estimation, without `--model_type`, "--lora_type" and `--visualize_depth`. 
 
 
 ## Acknowledgements
