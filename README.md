@@ -60,8 +60,7 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 
 **Depth Anything v2 (Finetuned)**: [GoogleDrive](), [BaiduCloud]()
 
-_**Sincerely thanks the above remarkable works for their contributions to the community!**_ :kissing_heart:
-
+---
 **Ours**: [GoogleDrive](), [BaiduCloud]()
 
 **Ablations**: [GoogleDrive](), [BaiduCloud]()
