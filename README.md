@@ -61,7 +61,9 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 **Depth Anything (Finetuned)**: [Google Drive](https://drive.google.com/file/d/1EP8iuM5t-B2KXne8qBxd6l0xaR5LjOh9/view?usp=sharing)
 
 **Depth Anything v2 (Finetuned)**: [Google Drive](https://drive.google.com/file/d/1TAtnk1xGOTYi5HJ3nhaoDe6zF1GB2_p3/view?usp=sharing)
+
 ---
+
 **Ours**: [Google Drive](https://drive.google.com/file/d/1PAg7uu1YrCJqXHassXcLbyarXZO2OHwd/view?usp=sharing)
 
 **Ablations**: [Google Drive](https://drive.google.com/file/d/1yIo6J4k74G5o2MGyTVWcQ9TVd2qHy1xC/view?usp=sharing)
