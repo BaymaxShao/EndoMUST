@@ -1,5 +1,5 @@
-# EndoMUST: Monocular Dpth Estimation for Robotic <ins>Endo</ins>scopy via <ins>Mu</ins>ltistage <ins>S</ins>elf-supervised <ins>T</ins>raining
-Here is the pre-released code implementation for "**EndoMUST: Monocular Depth Estimation for Robotic Endoscopy via Multistage Self-supervised Training**". 
+# EndoMUST: Monocular Dpth Estimation for Robotic <ins>Endo</ins>scopy via End-to-end <ins>Mu</ins>lti-step <ins>S</ins>elf-supervised <ins>T</ins>raining
+Here is the pre-released code implementation for "**EndoMUST: Monocular Depth Estimation for Robotic Endoscopy via End-to-end Multi-step Self-supervised Training**". 
 
 We revisit the self-supervised training strategy for endoscopy depth estimation, to jointly tackle all kinds of challenges.
 
