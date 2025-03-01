@@ -54,18 +54,17 @@ The existing models pretrained on SCARED dataset :floppy_disk: can be downloaded
 
 **DVSMono**: [in **AF_training_split/README.md**](https://github.com/adam99goat/DVSMono/blob/main/AF_training_split/README.md#comparison-with-sotas-using-the-training-split-of-af-sfmlearner)
 
-**IID-SfMLearner**: [in section **Prediction for a single image**](https://github.com/bobo909/IID-SfmLearner?tab=readme-ov-file#%EF%B8%8F-prediction-for-a-single-image) ONLY weights for depth estimation, for ego-motion estimation: [GoogleDrive](), [BaiduCloud]()
+**IID-SfMLearner**: [in section **Prediction for a single image**](https://github.com/bobo909/IID-SfmLearner?tab=readme-ov-file#%EF%B8%8F-prediction-for-a-single-image) ONLY weights for depth estimation, for ego-motion estimation: [Google Drive](https://drive.google.com/file/d/1gSy2O5ecz5ueKJgamXTgDcxQZ60KPxXL/view?usp=sharing)
 
 **AF-SfMLearner**: [in section **Model Zoo/End-to-End**](https://github.com/ShuweiShao/AF-SfMLearner?tab=readme-ov-file#-model-zoo)
 
-**Depth Anything (Finetuned)**: [GoogleDrive](), [BaiduCloud]()
+**Depth Anything (Finetuned)**: [Google Drive](https://drive.google.com/file/d/1EP8iuM5t-B2KXne8qBxd6l0xaR5LjOh9/view?usp=sharing)
 
-**Depth Anything v2 (Finetuned)**: [GoogleDrive](), [BaiduCloud]()
-
+**Depth Anything v2 (Finetuned)**: [Google Drive](https://drive.google.com/file/d/1TAtnk1xGOTYi5HJ3nhaoDe6zF1GB2_p3/view?usp=sharing)
 ---
-**Ours**: [GoogleDrive](), [BaiduCloud]()
+**Ours**: [Google Drive](https://drive.google.com/file/d/1PAg7uu1YrCJqXHassXcLbyarXZO2OHwd/view?usp=sharing)
 
-**Ablations**: [GoogleDrive](), [BaiduCloud]()
+**Ablations**: [Google Drive](https://drive.google.com/file/d/1yIo6J4k74G5o2MGyTVWcQ9TVd2qHy1xC/view?usp=sharing)
 
 ## Evaluation of Depth Estimation
 [Back to ToC](#table-of-content)
