@@ -4,7 +4,7 @@
 :pushpin: Note that:
 1. 'CI': `Pred.` denotes that **Camera Intrinsics** are **Predicted**.
 2. 'TP': Number of **Trainable Parameters** in the depth map generation network.
-3. *: Results form the **public provided weights**.
+3. *: Results from the **public provided weights**.
 4. \^: Model **finetuned** on SCARED dataset.
 5. **Inference speed** will be varied with hardware, e.g. 17.7ms on NVIDIA 3090 but 5.7ms on NVIDIA 4090 for EndoDAC.
 ### :clipboard: SCARED dataset
@@ -18,7 +18,7 @@
 |DVSMono|**BIBM'24**|Given|0.055|0.410|4.797|0.078|0.975|27.0|12.7|
 |MonoPCC|**arXiv'24**|Given|0.051|0.349|4.488|0.072|0.983|27.0|12.7|
 |EndoDAC|**MICCAI'24**|Pred.|0.052|0.362|4.464|0.072|0.979|1.6|5.7|
-|**EndoMUST**|**Ours**|**Pred.**|**0.046**|**0.313**|4.276|**0.067**|**0.984**|1.8|6.2|
+|**EndoMUST**|**Ours**|**Pred.**|**0.046**|**0.313**|**4.276**|**0.067**|**0.984**|1.8|6.2|
 
 ### :clipboard: Hamlyn dataset (Zero-shot)
 |Methods|From|CI|Abs Rel|Sq Rel|RMSE|RMSE Log|$\delta$|TP/M|Speed/ms|
@@ -56,5 +56,5 @@ The results are displayed as `value(relative error)`
 |Methods|fx|fy|cx|cy|
 |:---|:---:|:---:|:---:|:---:|
 |GT|0.8200|1.0200|0.5000|0.5000|
-|EndoDAC*|0.8610(5.00%)|1.0778(5.67%)|0.4917(1.66%)|0.5101(2.02%)|
-|**EndoMUST**|0.8158(**0.51%**)|1.0232(**0.31%**)|0.4949(**1.02%**)|0.4951(**0.98%**)|
+|EndoDAC*|0.8624(5.17%)|1.0786(5.75%)|0.4931(1.38%)|0.5091(1.82%)|
+|**EndoMUST**|0.8168(**0.39%**)|1.0230(**0.29%**)|0.4971(**0.58%**)|0.4964(**0.72%**)|
