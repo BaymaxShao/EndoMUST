@@ -1,7 +1,16 @@
-# EndoMUST: Monocular Depth Estimation for Robotic <ins>Endo</ins>scopy via End-to-end <ins>Mu</ins>lti-step <ins>S</ins>elf-supervised <ins>T</ins>raining (IROS'25)
-Here is the pre-released code implementation based on **Pytorch** for:
-
-"**EndoMUST: Monocular Depth Estimation for Robotic Endoscopy via End-to-end Multi-step Self-supervised Training**" (_**IROS 2025 Oral**_). 
+<div align="center">
+  
+---
+  
+<var>
+<h2> EndoMUST: Monocular Depth Estimation for Robotic Endoscopy via End-to-end Multi-step Self-supervised Training </h2>
+<h4> <a href='https://baymax-shao.netlify.app/'>Liangjing Shao</a><sup>1,2</sup>, Linxin Bai<sup>1,2</sup>, Chenkang Du<sup>1</sup>, Xinrong Chen<sup>1,2</sup> </h4>
+<h5> <sup>1</sup>Fudan University  <sup>2</sup>Shanghai Key Laboratory of MICCAI</h5>
+<h3> <a href='https://ieeexplore.ieee.org/abstract/document/11246835/'>IROS 2025 Oral</a> </h3>
+</var> 
+  
+---
+</div>
 
 We revisit the self-supervised training strategy for endoscopy depth estimation, to jointly tackle all kinds of challenges.
 
